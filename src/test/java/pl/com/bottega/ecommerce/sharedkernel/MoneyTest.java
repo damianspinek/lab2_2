@@ -23,12 +23,21 @@ public class MoneyTest {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void test_Money_add_2PLN_3PLN_expectedException(){
+	public void test_Money_add_2PLN_3EUR_expectedIllegalArgumentException(){
 		Money testValue1 = new Money(2,"PLN");
 		Money testValue2 = new Money(3,"EUR");
 		Money expectedResult = new Money(5,"PLN");
 		
 		assertThat(testValue1.add(testValue2), is(expectedResult));
+	}
+	
+	@Test
+	public void test_Money_substract_3PLN_2PLN_expectedTrue(){
+		Money testValue1 = new Money(3,"PLN");
+		Money testValue2 = new Money(2,"PLN");
+		Money expectedResult = new Money(1,"PLN");
+		
+		assertThat(testValue1.subtract(testValue2), is(expectedResult));
 	}
 
 }
