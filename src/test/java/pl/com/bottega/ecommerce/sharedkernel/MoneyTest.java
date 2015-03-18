@@ -85,8 +85,17 @@ public class MoneyTest {
 	}
 	
 	@Test
-	public void test_Money_lessOrEquals_3PLN_3PLN_expectedFalse(){
+	public void test_Money_lessOrEquals_3PLN_3PLN_expectedTrue(){
 		Money testValue1 = new Money(3,"PLN");
+		Money testValue2 = new Money(3,"PLN");
+		
+		
+		assertThat(testValue1.lessOrEquals(testValue2), is(true));
+	}
+	
+	@Test
+	public void test_Money_lessOrEquals_2PLN_3PLN_expectedTrue(){
+		Money testValue1 = new Money(2,"PLN");
 		Money testValue2 = new Money(3,"PLN");
 		
 		
