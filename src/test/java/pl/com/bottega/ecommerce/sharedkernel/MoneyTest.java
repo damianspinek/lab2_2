@@ -48,5 +48,13 @@ public class MoneyTest {
 		
 		assertThat(testValue1.subtract(testValue2), is(expectedResult));
 	}
+	@Test
+	public void test_Money_lessThan_2PLN_3EUR_expectedTrue(){
+		Money testValue1 = new Money(2,"PLN");
+		Money testValue2 = new Money(3,"PLN");
+		
+		
+		assertThat(testValue1.lessThan(testValue2), is(true));
+	}
 
 }
