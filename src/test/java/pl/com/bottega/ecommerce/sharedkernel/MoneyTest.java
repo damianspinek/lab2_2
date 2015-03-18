@@ -67,12 +67,21 @@ public class MoneyTest {
 	}
 	
 	@Test
-	public void test_Money_greaterThan_3PLN_2PLN_expectedFalse(){
+	public void test_Money_greaterThan_3PLN_2PLN_expectedTrue(){
 		Money testValue1 = new Money(3,"PLN");
 		Money testValue2 = new Money(2,"PLN");
 		
 		
 		assertThat(testValue1.greaterThan(testValue2), is(true));
+	}
+	
+	@Test
+	public void test_Money_greaterThan_2PLN_3PLN_expectedFalse(){
+		Money testValue1 = new Money(2,"PLN");
+		Money testValue2 = new Money(3,"PLN");
+		
+		
+		assertThat(testValue1.greaterThan(testValue2), is(false));
 	}
 	
 	
