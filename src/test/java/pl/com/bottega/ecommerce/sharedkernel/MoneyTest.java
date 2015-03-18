@@ -13,5 +13,13 @@ public class MoneyTest {
 		
 		assertThat(testValue.multiplyBy(3), is(expectedResult));
 	}
+	@Test
+	public void test_Money_add_2PLN_3PLN_expectedTrue(){
+		Money testValue1 = new Money(2,"PLN");
+		Money testValue2 = new Money(3,"PLN");
+		Money expectedResult = new Money(5,"PLN");
+		
+		assertThat(testValue1.add(testValue2), is(expectedResult));
+	}
 
 }
